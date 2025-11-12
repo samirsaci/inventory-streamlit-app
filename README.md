@@ -16,6 +16,13 @@ The app lets you test **fixed-cycle replenishment** under deterministic and stoc
 - KPIs: **Stockout days**, **Min IOH**, **Avg IOH**
 - Auto re-run after initial click
 
+## Live Demo & Deploy It Yourself
+
+This app is deployed on **Streamlit Community Cloud**:  
+👉 https://supplyscience-inventory.streamlit.app/
+
+You can deploy your own copy to Streamlit Community Cloud by connecting your GitHub repo and selecting `app.py` as the main file.
+
 ## Architecture
 
 ```
@@ -35,8 +42,8 @@ Simulation Engine (pandas / numpy) — inventory_analysis.py
 - Git (optional)
 - Inventory Management Tutorial Source Code: https://github.com/samirsaci/tuto_inventory
 - One of:
-    - **Linux**: `uv` (recommended) or `pip`
-    - **Windows**: `pip` (PowerShell / Command Prompt)
+  - **Linux**: `uv` (recommended) or `pip`
+  - **Windows**: `pip` (PowerShell / Command Prompt)
 
 > If you don’t have Python, install it from python.org or via your OS package manager.
 
@@ -52,7 +59,7 @@ tuto_inventory /
 └─ inventory_models.py
 ```
 
-> Keep your inventory_analysis.py and inventory_models.py as-is. 
+> Keep your inventory_analysis.py and inventory_models.py as-is.
 > Ensure `inventory/__init__.py` exists (can be empty).
 
 ## Setup
@@ -89,9 +96,10 @@ EOF
 # Install
 uv pip install -r requirements.txt
 ```
+
 ---
 
-### Option B — Windows (PowerShell or CMD) using pip**
+### Option B — Windows (PowerShell or CMD) using pip\*\*
 
 ```bash
 mkdir tuto_inventory
@@ -130,7 +138,8 @@ pip install -r requirements.txt
 > Defaults often used: `D = 2000`, `T_total = 365` ⇒ `D_day ≈ 5.48`.  
 > With `T = 10` → `Q ≈ 55` and `initial_ioh ≈ 55`. Keep `sigma = 0` unless noted.
 
-### Hook 1  
+### Hook 1
+
 **“What if your inventory touched zero without ever stocking out?”**
 
 **Scenario 1 — Lead time = 1 (receive next day)**  
@@ -139,7 +148,8 @@ pip install -r requirements.txt
 
 ---
 
-### Hook 2  
+### Hook 2
+
 **“Same policy, +1 day lead time—what breaks first?”**
 
 **Scenario 2 — Lead time = 2 (receive two days later)**  
@@ -148,7 +158,8 @@ pip install -r requirements.txt
 
 ---
 
-### Hook 3  
+### Hook 3
+
 **“Can we fix stockouts by just ordering more?”**
 
 **Scenario 3 — Keep timing, increase quantity**  
@@ -158,7 +169,8 @@ pip install -r requirements.txt
 
 ---
 
-### Hook 4  
+### Hook 4
+
 **“What if we keep quantity but fix the timing?”**
 
 **Scenario 4 — Anticipate lead time (lead-time-aware trigger)**  
@@ -168,16 +180,18 @@ pip install -r requirements.txt
 
 ---
 
-### Hook 5  
+### Hook 5
+
 **“What does the EOQ sawtooth actually look like?”**
 
 **Scenario 5 — EOQ cycle, lead time = 1 (manual)**  
 **Set:** `LD=1`, `Q=400`, `T≈73`, `initial_ioh=400`, `sigma=0`, **Method:** Simple Ordering  
-**See:** Classic EOQ sawtooth; **avg IOH ≈ Q*/2**; **no negatives**.
+**See:** Classic EOQ sawtooth; **avg IOH ≈ Q\*/2**; **no negatives**.
 
 ---
 
-### Hook 6  
+### Hook 6
+
 **“Add uncertainty—does timing still save you?”**
 
 **Scenario 6 — Stochastic demand (Normal), lead time = 5**  
@@ -200,7 +214,8 @@ pip install -r requirements.txt
   Check that your inputs match the scenario values above.
 
 ## Roadmap
-*These are just suggestions to help you pursue the exercise.*
+
+_These are just suggestions to help you pursue the exercise._
 
 - Add CSV export of results (table + `st.download_button`)
 - Add **Safety Stock / ROP** helpers for stochastic cases
@@ -211,7 +226,3 @@ pip install -r requirements.txt
 
 Senior Supply Chain and Data Science consultant with international experience working on Logistics and Transportation operations.
 For consulting or advising on analytics and sustainable supply chain transformation, feel free to contact me via [Logigreen Consulting](https://logi-green.com) or [LinkedIn](https://linkedin.com/in/samir-saci)
-
-
-
-
