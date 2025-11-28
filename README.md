@@ -7,6 +7,11 @@ The app lets you test **fixed-cycle replenishment** under deterministic and stoc
 - Results are **reproducible** (fixed random seed).
 - Engine modules remain **as-is**, wrapped with a minimal Streamlit UI.
 
+## 🎥 Full Tutorial Video  
+Click the image below to open the full video tutorial on YouTube:
+
+[![ABC Analysis Tutorial](https://www.samirsaci.com/content/images/2025/11/temp_2-4.png)](https://youtu.be/FC8nULkvHcQ)
+
 ## Features
 
 - Deterministic and stochastic demand simulations
