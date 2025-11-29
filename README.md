@@ -128,6 +128,11 @@ pip install -r requirements.txt
 
 ## How to Use
 
+```
+# Run the app
+streamlit run app.py
+```
+
 1. In the **sidebar**, set:
    - `D` (annual demand), `T_total` (days), `LD` (lead time), `T` (cycle), `Q` (order qty),
      `initial_ioh` (initial stock), `sigma` (daily demand std. dev.), and **Method**.
